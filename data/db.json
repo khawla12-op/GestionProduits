@@ -1,0 +1,70 @@
+{
+  "products": [
+    {
+      "id": "2",
+      "name": "Iphone 6s",
+      "price": 700,
+      "checked": true
+    },
+    {
+      "id": "3",
+      "name": "Iphone 7",
+      "price": 800,
+      "checked": false
+    },
+    {
+      "id": "4",
+      "name": "Iphone 7s",
+      "price": 900,
+      "checked": true
+    },
+    {
+      "id": "5",
+      "name": "Iphone 8",
+      "price": 1000,
+      "checked": false
+    },
+    {
+      "id": "6",
+      "name": "Iphone 8s",
+      "price": 1100,
+      "checked": true
+    },
+    {
+      "id": "7",
+      "name": "Iphone 9",
+      "price": 1200,
+      "checked": true
+    },
+    {
+      "id": "8",
+      "name": "Iphone 9s",
+      "price": 1300,
+      "checked": false
+    },
+    {
+      "id": "9",
+      "name": "Iphone 10",
+      "price": 1400,
+      "checked": true
+    },
+    {
+      "id": "10",
+      "name": "Iphone 10s",
+      "price": 1500,
+      "checked": false
+    },
+    {
+      "id": "6354",
+      "name": "khaoula",
+      "price": 3000,
+      "checked": true
+    },
+    {
+      "id": "dba1",
+      "name": "khaoula ALLAK",
+      "price": 2,
+      "checked": true
+    }
+  ]
+}

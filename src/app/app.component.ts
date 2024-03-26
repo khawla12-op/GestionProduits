@@ -5,6 +5,16 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
+
 export class AppComponent {
-  title = 'GestionProduits';
+   actions :Array<any> =[
+    {title: "Home","route":"/home"},
+    {title: "Products","route":"/products"},
+    {title: "New Product","route":"/newProduct"}
+
+   ];
+   currentAction :any
+   setCurrentAction(action:any){
+    this.currentAction = action;
+   }
 }
