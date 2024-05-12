@@ -1,18 +1,6 @@
 {
   "products": [
     {
-      "id": "2",
-      "name": "Iphone 6s",
-      "price": 700,
-      "checked": true
-    },
-    {
-      "id": "3",
-      "name": "Iphone 7",
-      "price": 800,
-      "checked": false
-    },
-    {
       "id": "4",
       "name": "Iphone 7s",
       "price": 900,
@@ -28,7 +16,7 @@
       "id": "6",
       "name": "Iphone 8s",
       "price": 1100,
-      "checked": true
+      "checked": false
     },
     {
       "id": "7",
@@ -65,6 +53,46 @@
       "name": "khaoula ALLAK",
       "price": 2,
       "checked": true
+    },
+    {
+      "id": "ac8f",
+      "name": "khaoula",
+      "price": 10,
+      "checked": true
+    },
+    {
+      "id": "4feb",
+      "name": "khaoula",
+      "price": 10,
+      "checked": true
+    }
+  ],
+  "users": [
+    {
+      "id": "user1",
+      "password": "MTIzNA==",
+      "roles": [
+        "USER"
+      ],
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IktoYW91bGEgYWxsYWsiLCJpYXQiOjE1MTYyMzkwMjJ9.yVnL2KvK30YaB2JvHDtTCD1aQ9JtQ52XIECLQOmeOwM"
+    },
+    {
+      "id": "user2",
+      "password": "1234",
+      "roles": [
+        "USER"
+      ],
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6InVzZXIyIiwiaWF0IjoxNTE2MjM5MDIyfQ.7REogxym-jhlheQVXiMfchV0RJ-D-kKB38YwfBu9aVk"
+    },
+    {
+      "id": "admin",
+      "password": "1234",
+      "roles": [
+        "ADMIN",
+        "USER"
+      ],
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbiIsIm5hbWUiOiJ1c2VyIGV0IGFkbWluIiwiaWF0IjoxNTE2MjM5MDIyfQ.hJ5U1v48DGryhqC2jFG2LWljkPg8bZVoqt7mYIjkVrE"
     }
   ]
 }
+

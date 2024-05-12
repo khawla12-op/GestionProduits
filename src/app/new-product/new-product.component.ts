@@ -15,10 +15,8 @@ export class NewProductComponent implements OnInit{
   }
   ngOnInit(){
     this.productForm = this.fb.group({
-       name:this.fb.control('', [Validators.required]),
-      // price:this.fb.control('', Validators.required),
+      name:this.fb.control('', [Validators.required]),
       price:this.fb.control(0),
-
       checked:this.fb.control(false)
     });
   }

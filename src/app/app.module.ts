@@ -6,16 +6,29 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { ProductsComponent } from './products/products.component';
 import { NewProductComponent } from './new-product/new-product.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-//import { ProductService } from './services/product.service';
+import { EditProductComponent } from './edit-product/edit-product.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { AppErrorsComponent } from './app-errors/app-errors.component';
+import { HttpAppInterceptor } from './services/app-http.interceptor';
+import { LoginComponent } from './login/login.component';
+import { AdminTemplateComponent } from './admin-template/admin-template.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ProductsComponent,
-    NewProductComponent
+    NewProductComponent,
+    EditProductComponent,
+    DashboardComponent,
+    NavbarComponent,
+    AppErrorsComponent,
+    LoginComponent,
+    AdminTemplateComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -26,6 +39,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   ],
   providers: [
     provideClientHydration(),
+    { provide: HTTP_INTERCEPTORS, useClass: HttpAppInterceptor, multi: true },
     //ProductService,
   ],
   bootstrap: [AppComponent]

@@ -1,42 +1,65 @@
-<div  class="p-3">
-    <div class="card">
+<div class="p-3">
+  <div class="card">
+    <div class="card-body">
+      <div class="card">
         <div class="card-body">
-      <!-- Generationn de formulaire avec la deuxieme methode:FormsModule -->
-      <input type="text" [(ngModel)]="keyword">
-      <button (click)="handleSearch()" class="btn btn-outline-success">Search</button>
-          
-
-
-           <table class ="table">
-                <thead>
-                     <tr>
-                          <th>Name</th>
-                          <th>Price</th>
-                          <th>Checked</th>
-                     </tr>
-                </thead>
-                <tbody>
-                    <!--tr *ngFor="let product of products$ | async "-->
-                      <tr *ngFor="let product of products">
-
-                          <td>{{product.name}}</td>
-                          <td>{{product.price}}</td>
-                          <td>
-                            <button (click)="handleCheckProduct(product)"
-                            class="btn btn-outline-success">
-                                <i [class]="product.checked ? 'bi bi-check-circle' : 'bi bi-circle'"></i>
-                            </button>
-                          </td>
-                          <td>
-                               <button (click)="handleDelete(product)"
-                               class="btn btn-outline-danger">
-                                     <i class="bi bi-pencil-square"></i>
-                               </button>
-                          </td>
-                     </tr>
-                    </tbody>
-                </table>
+          <div class="row g-2">
+            <div class="col-auto">
+              <input class="form-control" type="text" />
+              <!-- <input class="form-control" type="text" [(ngModel)]="query"/> -->
+            </div>
+            <div class="col-auto">
+              <button (click)="searchProducts()" class="btn btn-outline-info">
+                <i class="bi bi-search"></i>
+              </button>
+            </div>
+          </div>
         </div>
-
+      </div>
+      <table class="table">
+        <thead>
+         <tr>
+           <th>Name</th><th>Price</th><th>Checked</th>
+         </tr>
+        </thead>
+        <tbody *ngIf="appState.productsState">
+          <tr *ngFor="let product of appState.productsState.products">
+            <td>{{product.name}}</td>
+            <td>{{product.price}}</td>
+            <td *ngIf="appState.authState.roles.includes('ADMIN')">
+              <button (click)="handleCheckProduct(product)" class="btn btn-outline-success">
+                <i class=""
+                   [ngClass]="product.checked?'bi bi-check-circle-fill':'bi bi-circle-fill'"
+                ></i>
+              </button>
+            </td>
+            <td *ngIf="!appState.authState.roles.includes('ADMIN')">
+                <i class=""
+                   [ngClass]="product.checked?'bi bi-check-circle-fill':'bi bi-circle-fill'"
+                ></i>
+            </td>
+            <td *ngIf="appState.authState.roles.includes('ADMIN')">
+              <button (click)="handleDelete(product)" class="btn btn-outline-danger">
+                <i class="bi bi-trash"></i>
+              </button>
+            </td>
+            <td *ngIf="appState.authState.roles.includes('ADMIN')">
+              <button (click)="handleEdit(product)" class="btn btn-outline-success">
+                <i class="bi bi-pen-fill"></i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <ul class="nav nav-pills">
+        <li *ngFor="let page of [].constructor(appState.productsState.totalPages); let index=index">
+          <button (click)="handleGoToPage(index+1)"
+                  [ngClass]="appState.productsState.currentPage===(index+1)?'btn btn-success m-1':'btn btn-outline-success m-1'"
+                  class="">
+            {{index+1}}
+          </button>
+        </li>
+      </ul>
     </div>
+  </div>
 </div>

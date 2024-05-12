@@ -7,14 +7,5 @@ import { Component } from '@angular/core';
 })
 
 export class AppComponent {
-   actions :Array<any> =[
-    {title: "Home","route":"/home"},
-    {title: "Products","route":"/products"},
-    {title: "New Product","route":"/newProduct"}
-
-   ];
-   currentAction :any
-   setCurrentAction(action:any){
-    this.currentAction = action;
-   }
+   
 }

@@ -1,0 +1,21 @@
+<nav class="p-3">
+    <ul class ="nav nav-pills">
+      <li *ngFor="let action of actions">
+        <button 
+        (click)="setCurrentAction(action)"
+        routerLink="{{action.route}}" 
+        [class]="action === currentAction ? 'btn btn -success ms-1' : 'btn btn-outline-success ms-1'">
+          {{action.title}}
+  
+        </button>
+      </li>
+      <li *ngIf="loading|async">
+        <div class="spinner-border text-info m-1" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </li>
+      <li *ngIf="appState.productsState.status=='ERROR'">
+        <div class="bg-danger bg-opacity-50 p-2 ms-1 border border-success">{{appState.productsState.errorMessage}}</div>
+      </li>
+    </ul>
+  </nav>
